@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,6 +122,26 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="544.66666666666663" width="370" height="233.33333333333337"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HeW-Yf-wps">
+                                                <rect key="frame" x="0.0" y="114.33333333333337" width="370" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="5" id="0O8-4d-1hC"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="Jrr-ac-RmZ"/>
+                                                    <constraint firstAttribute="height" constant="5" id="RhN-sC-IgV"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="5" id="hcM-sY-ZBg"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="5" id="iku-aX-tO7"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="5" id="vcE-Vi-vVp"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                                <color key="trackTintColor" systemColor="systemGrayColor"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="HeW-Yf-wps" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="TQg-Da-qcd"/>
+                                            <constraint firstItem="HeW-Yf-wps" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="cEZ-Mw-RmN"/>
+                                            <constraint firstAttribute="trailing" secondItem="HeW-Yf-wps" secondAttribute="trailing" id="voE-fh-G1k"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -134,6 +155,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wI6-ag-afn" secondAttribute="trailing" id="dky-ZA-Z3J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressBar" destination="HeW-Yf-wps" id="naS-Sa-sZN"/>
+                        <outlet property="titleLabel" destination="XLm-5r-pSP" id="0Ya-sw-PgI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,5 +169,11 @@
         <image name="hard_egg" width="287.66665649414062" height="366.33334350585938"/>
         <image name="medium_egg" width="288" height="363.33334350585938"/>
         <image name="soft_egg" width="287" height="365.33334350585938"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
